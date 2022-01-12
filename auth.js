@@ -10,7 +10,7 @@ exports.COOKIE_OPTIONS = {
 
 exports.getToken = user => {
   return jwt.sign(user, process.env.JWT_SECRET, {
-    expiresIn: eval(process.env.SESSION_EXPIRY),
+    expiresIn: eval(process.env.SESSION_EXPIRY)
   })
 }
 
@@ -21,4 +21,4 @@ exports.getRefreshToken = user => {
   return refreshToken
 }
 
-exports.verifyUser = passport.authenticate("jwt", { session: false })
+exports.verifyUser = passport.authenticate("jwt", { session: false });
